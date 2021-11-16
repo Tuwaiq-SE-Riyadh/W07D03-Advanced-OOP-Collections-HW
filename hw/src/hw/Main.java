@@ -1,7 +1,6 @@
 package hw;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
 
@@ -32,6 +31,45 @@ public class Main {
         System.out.println("Area: " + cylinder.getArea());
         System.out.println("Height: "+cylinder.getHeight());
         System.out.println("Volume: "+cylinder.getVolume());
+
+//        Write a Java program to replace the second element of a ArrayList with the specified element
+        Collection<String> collection = new ArrayList<String>();
+        collection.add("Shrooq");
+        collection.add("Saleh");
+        collection.add("Alamri");
+        System.out.println(collection);
+        Iterator<String> iterator = collection.iterator();
+        iterator.next();
+        iterator.next();
+        iterator.remove();
+        System.out.println(collection);
+//        Create a new priority queue, add some colors (string) and iterate through all elements.
+        PriorityQueue<String> q = new PriorityQueue<String>();
+        q.offer("Red");
+        q.offer("Black");
+        q.offer("Green");
+
+//        Let the user insert elements into priority queue then check if a specific element is in the list or not.
+        Scanner input = new Scanner(System.in);
+
+
+        int condition = 1;
+        while (condition==1){
+            System.out.println("Enter Color");
+            String str = input.next();
+            if (!q.contains(str)){
+                System.out.println("color is not in queue");
+                q.offer(str);
+                System.out.println(q);
+            }else {
+                System.out.println("Cannot insert color because it is in queue!");
+            }
+            System.out.println("Enter 1 to restart color or 0 to stop");
+            condition = input.nextInt();
+        }
+
+
+
 
     }
 }
